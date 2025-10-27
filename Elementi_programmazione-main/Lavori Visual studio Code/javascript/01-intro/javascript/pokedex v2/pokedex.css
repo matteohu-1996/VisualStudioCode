@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+    margin: 0;
+    background-color: #646464;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin: 0 auto;
+}
+.btn {
+    color: #fff;
+    background-color: #e03639;
+    border: 1px solid #303639;
+    font-size: 1rem;
+    padding: .5rem .75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #c02e30;
+    border-color: #c02e30;
+}
+
+.btn-secondary {
+    color: #323232;
+    background-color: #45c9fb;
+    border-color: #45c9fb;
+}
+
+.btn-secondary:hover {
+    background-color: #3db1ee;
+    border-color: #3db1ee;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #323232;
+    color: #fff;
+    padding: .5rem 1.5rem;
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+
+}
+.navbar ul {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: #323232;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    list-style-type: none;
+    transition: all .2s ease-in-out;
+}
+
+.navbar ul.open {
+    right: 0;
+}
+
+.navbar ul a {
+    color: #fff;
+    text-decoration: none;
+    transition:  all .2s ease-in-out;
+}
+.navbar ul a:hover{
+    color: #e03639;
+    
+}
+.btn-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.4rem;
+}
+
+/* --------------------------------- pokedex -------------------------------- */
+
+.pokedex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 5rem 0;
+}
+.pokemon {
+    /** width: calc((25% - 1rem) + (1rem / 4)); */
+    width: 100%;
+}
+
+.card {
+    padding: 1rem;
+    border: 1px solid #d2d2d2;
+    border-radius: .5rem;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+}
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    margin-bottom: 1.2rem;
+}
+
+@media screen and (min-width: 567px) {
+    .pokemon {
+        width: calc((50% - 1rem) + (1rem / 2));
+    }
+
+    .navbar ul {
+        position: static;
+        width: auto;
+        height: auto;
+        flex-direction: row;
+    }
+
+    .btn-close,
+    .btn-open {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 991px) {
+    .pokemon {
+        width: calc((25% - 1rem) + (1rem / 4));
+    }
+}
