@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS - Basi 03 - Form HTML</title>
+
+    <link rel="stylesheet" href="../css/general.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <!--
+            I form (o web form) vengono utilizzati per ottenere informazioni dall'utente, che sia per permettergli di fare il login o la registrazione al sito, o per contattare i proprietari del sito mandandogli un messaggio, o ancora un form di ricerca dove possiamo chiedere all'utente i parametri della sua ricerca (AirBnB).
+
+            Per questo di solito un form è composto da una serie di campi di input nei quali l'utente può immettere le informazioni. In base al tipo di informazione richiesta, servirà un tipo di campo di input specifico che stabiliremo tramite l'attributo type.
+        -->
+
+        <h1>Form HTML</h1>
+
+        <!-- L'attributo action nel tag FORM serve a dire al browser cosa fare una volta che l'utente invia le informazioni -->
+        <form>
+            <!-- 
+                I tag INPUT sono autoconclusivi e hanno sempre l'attributo type per indicare il genere di dato che ci aspettiamo dall'utente. Per esempio text, che è il più generico, si aspetta una stringa di testo di qualsiasi tipo.
+
+                Di solito si assegna anche un id per poterlo legare alla propria etichetta.
+                È buona norma utilizzare i tag LABEL per etichettare i campi di input, così che il browser e soprattutto l'utente sappiano che tipo di dato ci aspettiamo che venga inserito all'interno di ogni input. Nell'attributo for della LABEL si inserisce l'id dell'input che descrive.
+
+                L'attributo name ha uno scopo simile all'id, ma viene anche utilizzato nel momento in cui il form viene inviato e un file php, per esempio, prende questi dati e li processa in base a ciò che serve servendosi dell'attributo name.
+                In HTML il name di un input serve anche a raggruppare assieme parti di un form. Un esempio possono essere le checkbox o i radio button.
+
+                Esistono campi di input che non richiedono all'utente di scrivere qualcosa, ma di selezionare una o più opziono, come per esempio le checkbox, i radio button e le select.
+
+                La select è un campo di input che permette all'utente di cliccare su di essa per avere un menù a tendina dal quale scegliere il valore da inserire e poi inviare col form. Siccome dobbiamo inserire noi le opzioni della select, non useremo un tag input che è autoconclusivo, ma un tag SELECT, che accetta al suo interno dei tag OPTION, i quali riporteranno le opzioni di valori tra cui scegliere.
+
+                Utilizziamo il tag TEXTAREA per dare all'utente la possibilità di inserire una grande quantità di testo, per esempio nel caso in cui gli chiedessimo una biografia, o di scrivere un messaggio dettagliato al proprietario di un sito.
+
+                Alla fine metteremo un campo di input di tipo submit, che farà visualizzare un bottone che permetterà all'utente di inviare il form appena compilato. Al click, il browser prenderà il valore all'interno dell'attributo action del form (uno script backend) e invierà lì i dati inseriti dall'utente. Non avendo nessuna gestione backend, la pagina verrà refreshata e potremo vedere tutti i dati nella barra degli indirizzi del browser.
+
+                Possiamo infine aggiungere l'attributo required ai campi che ci interessano per impedire all'utente di inviare il form senza averli compilati.
+
+                https://www.w3schools.com/html/html_form_input_types.asp
+            -->
+            <label for="username">User:</label>
+            <input type="text" id="username" name="username" placeholder="scegli uno username" required> <br> <br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="la tua email" required> <br> <br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="scegli una password" required> <br> <br>
+
+            <span>Seleziona il tuo gender:</span>
+            <input type="radio" id="opzione1" name="gender" value="uomo">
+            <label for="opzione1">Uomo</label>
+            <input type="radio" id="opzione2" name="gender" value="donna">
+            <label for="opzione2">Donna</label>
+            <input type="radio" id="opzione3" name="gender" value="altro">
+            <label for="opzione3">Altro</label> <br> <br>
+
+            <label for="domanda">Domanda di sicurezza:</label>
+            <select id="domanda" name="domanda">
+                <option value="d1">Come si chiama il tuo animale domestico?</option>
+                <option value="d2">Qual è il tuo colore preferito?</option>
+                <option value="d3">Qual è la tua domanda di sicurezza preferita?</option>
+            </select>
+
+            <br> <br>
+
+            <label for="risposta">Risposta alla domanda di sicurezza:</label>
+            <input type="text" id="risposta" name="risposta">
+
+            <br> <br>
+
+            <label for="bio">Dicci qualcosa sulla tua vita:</label> <br>
+            <textarea id="bio" name="bio" cols="60" rows="10" placeholder="Parlaci di te..."></textarea>
+
+            <br> <br>
+
+            <input type="submit" value="Invia il form e registrati">
+        </form>
+
+        <!--
+            L'attributo id riporta un identificativo per quell'elemento HTML. Il valore deve essere unico, non deve esserci nessun altro elemento all'interno della pagina che ne possegga uno uguale.
+            Lo utilizziamo per diversi motivi:
+                - per poter richiamare quell'elemento specifico nel CSS e assegnargli degli stili
+                - per poter richiamare quell'elemento specifico in JavaScript e farne ciò che preferiamo
+                - per poter legare un tag input alla sua etichetta (tag LABEL)
+        -->
+
+    </div>
+
+</body>
+
+</html>

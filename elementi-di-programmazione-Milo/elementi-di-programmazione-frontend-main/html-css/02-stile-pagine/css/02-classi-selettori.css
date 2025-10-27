@@ -1,0 +1,113 @@
+/*
+    Abbiamo visto i selettori di tipo, ovvero i selettori che vengono utilizzati per selezionare e applicare stili a tutti gli elementi di un determinato tipo (o tag) all'interno di un documento HTML.
+*/
+/* Tutti i tag p dei documenti HTML a cui è collegato questo foglio avranno questo colore del testo */
+/* p {
+	color: #545454;
+} */
+
+/*
+    Se volessimo prendere un singolo P specifico per dagli degli stili a parte?
+    Possiamo assegnargli una classe con l'attributo HTML class="" e richiamarla nel foglio di stile con il nome che abbiamo deciso preceduto da un punto.
+
+    Assegno al P che mi interessa la classe error e da CSS la richiamo per dire che TUTTI gli elementi che posseggono questa classe dovranno avere le regole specficate qui sotto.
+
+    Questo fa in modo che si possa definire lo stile di un componente, come un bottone, una volta sola e utilizzarlo quante volte vogliamo all'interno del nostro progetto. 
+*/
+/* .error {
+	color: red;
+} */
+
+/*
+    Se invece volessimo selezionare solo i paragrafi con la classe error, dovremmo fare un selettore più specifico
+*/
+p.error {
+	color: red;
+}
+
+p.success {
+	color: #07b95a;
+}
+
+p.success.feedback {
+	border: 1px dashed #07b95a;
+	padding: 10px;
+}
+
+/*
+    Abbiamo parlato anche dell'attributo id, che a sua volta può essere utilizzato in CSS come selettore di un elemento (uno solo, visto che l'id è univoco).
+    Converrebbe evitare di usarli in CSS, perché vengono utilizzati spesso per JavaScript, in più hanno una specificità più forte di quella delle classi, quindi le regole ad essi assegnate sono più difficili da sovrascrivere.
+
+    Creiamo un selettore di id in CSS come facciamo per le classi, ma invece del punto useremo il cancelletto.
+*/
+#content {
+	background-color: #ebebeb;
+	padding: 20px;
+}
+
+/*
+    È possibile essere ancora più specifici sfruttando i selettori di discendenza. Possiamo selezionare gli elementi figli di un elemento genitore.
+
+    Mettiamo caso di voler selezionare solo i P all'interno di un elemento DIV. Selezioniamo il genitore e poi selezioniamo quali figli ci interessano separando genitore e figli con uno spazio.
+*/
+/* Tutti i paragrafi che sono contenuti dentro un DIV */
+div p {
+	font-weight: bold;
+}
+
+/*
+    Possiamo utilizzare anche gli attributi come selettori.
+
+    Se volessimo selezionare tutti i link, quindi tutti gli elementi A, che hanno un attributo href, posso creare un selettore richiamando il tipo di tag che mi interessa seguito dal nome dell'attributo compreso tra parentesi quadre.
+
+    Essendo ancora più specifici, possiamo selezionare tutti gli A che all'interno dell'attributo href hanno un valore specifico.
+*/
+a[href] {
+	background-color: #3dd313;
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+a[href="landing.html"] {
+	background-color: cadetblue;
+}
+
+/* ----------------------- EREDITARIETÀ E SPECIFICITÀ ----------------------- */
+/*
+    Gli elementi HTML possono ereditare alcune proprietà CSS dai genitori, ma non tutte.
+    Nell'esempio sottostante, il colore del P sarà rosso, perché è stata assegnata la regola color al genitore.
+
+    div {
+        color: red;
+    }
+
+    <div>
+        <p>Ciao</p>
+    </div>
+*/
+section {
+	color: lightcoral; /* ereditato */
+	border: 1px solid grey; /* non ereditato */
+	margin: 40px; /* non ereditato */
+	font-weight: bold; /* ereditato */
+}
+
+/* Possiamo forzare un elemento a ereditare le proprietà che altrimenti non erediterebbe dal genitore */
+section p {
+	border: inherit;
+	margin: inherit;
+	/* Questa regola sovrascriverà quella ereditata dal genitore, in quanto più specifica perché la stiamo assegnando direttamente agli elementi interessati */
+	color: crimson;
+}
+
+/*
+    Visto che si chiama Cascading Style Sheet, se per sbaglio o volontariamente utilizziamo lo stesso selettore per definire uno stile già assegnato, ma con un valore diverso, vincerà sempre quella che si trova più in basso nel foglio di stile.
+    Se però dovessimo togliere dal selettore 'section', vincerebbe la regola precedente, perché il selettore è più specifico.
+*/
+section p {
+	color: orange;
+}
+
+/* Calcolare la specificità https://www.html.it/pag/18946/calcolare-la-specificit/ */

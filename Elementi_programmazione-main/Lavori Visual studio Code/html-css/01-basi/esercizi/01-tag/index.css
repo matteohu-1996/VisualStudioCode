@@ -1,0 +1,14 @@
+*{
+    body { 
+        font-size: small;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .img-container {
+    text-align: center;
+    }
+    h1 {
+        text-align: center;
+    }
+    
+}
+
