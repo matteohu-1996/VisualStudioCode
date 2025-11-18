@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!-- il tag DOCTYPE definisce il documento come un file html, cosi che il browser possa interpretarlo correttamente -->
+<html lang="en">
+<!-- si puo cambiare lingua del documento it/zh -->
+
+<head>
+    <!-- il tag HEAD contiene tutta una serie di tag che servono o fornire informazioni extra sulla pagina, come meta-dati o il titolo della pagina. Tutto ciò che viene riportato nella head non verrà visualizzato sulla pagina renderizzato dal browser -->
+    <meta charset="UTF-8">
+    <!--  utf 8 visualizza tutti i caratteri che mancherebbero  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-Basi HTML</title>
+    <!-- Il tag title riporta il titolo della pagina. Importante per la SEO -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body id="top">
+    <!-- il tag body contiene tutto ciò che verrà visualizzato dagli utenti che visitano la pagina -->
+    <!-- h1,h2,h3,h4,h5,h6
+ Hanno un valore semantico decrescente, quindi il tag h1 di un pagina conterrà il titolo principal del documetn e ce ne può essere solo uno
+ 
+ I contenuti saranno divisi all'interno della pagina  e ogni porzione avrà il suo titolo che spiegherà di cosa si parla. Questo titolo sara in H2
+ 
+ Se all'interno di queste macro porzioni della pagina ci sarà bisogno di suddividere ancora, allora potremo utilizzare gli H# per indicare le varie sotto porzioni e vosi anche se h4, h5, h6  non sono mai utilizzati.
+
+é importante usare gli heading secondo il loro valore semantico e non il loro aspetto sulla pagina, per quello ci sarà il CSS a occuparsene -->
+
+
+    <h1>
+        01 - basi
+    </h1>
+    <h2>
+        sotto argomento 1
+    </h2>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+        Voluptatem vel dolores optio ex perferendis laboriosam eaque corrupti reprehenderit quae cum similique,
+        inventore amet ratione ab praesentium nobis delectus itaque ipsam.
+    </p>
+    <h3> sotto argomento 1.1</h3>
+    <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae officiis repellendus reiciendis, facere adipisci
+        reprehenderit delectus tempora sequi ipsam quasi perferendis sed, ipsum aperiam sint, dignissimos consequuntur
+        aut quis. Fuga?</p>
+    <h2>
+        sotto argomento 2
+    </h2>
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit voluptatem officiis quas laudantium illo
+        numquam sit neque quibusdam facilis in atque non necessitatibus aliquid quia unde ipsa modi, dolorem eius!
+    </p>
+    <h4> heading 4 </h4>
+    <h5> heading 5 </h5>
+    <h6> heading 6 </h6>
+
+    <!-- HR horizontal rule è un tag autoconclusivo che crea una riga divisoria -->
+    <hr>
+
+<!--  Liste ordinate e non ordinate 
+  é possibile craere delle liste puntate o numerate utilizzando i corretti tag HTML
+  UL OL unordered list ordered list
+  Comunicanno al browser che ciò che contengono è una lista.
+  Ogni elemento della lista invece viene contenuto all'itnerno di un tag LI, List Item, e gli LI sono gli unici tag accettati come figli diretti di UL e OL-->
+    <ul>
+        <li> Mario </li>
+        <li> yoshi</li>
+        <li> luigi</li>
+    </ul>
+    <ol>
+        <li> peach</li>
+        <li> toad</li>
+        <li> bowser</li>
+    </ol>
+    <hr>
+
+    <p>
+        <strong>Mario</strong> rende porzioni di testo in grassetto e comunica al browser che si tratta di una parte
+        importante del contenuto. <br>
+        <b>il tag Bold</b> rende porzioni di testo in grassetto, ma senza assegnargli alcun significato <br>
+        <em> Il tag EM </em> per enfatizzare una porzione di testo in corsivo italic e rendendo importante per il
+        browser <br>
+        <i> Il tag I italic </i> rende una porzione di testo in corsivo italic senza dargli significato, quindi solo
+        visivamente <br>
+        <u> Il tag U underlined</u> serve a sottolineare il testo
+    </p>
+
+    <hr>
+<!-- 
+        I tag A ancora servono a creare link a altre pagine oppure altri siti
+
+        Gli attributi sono qualcosa che si aggiunge all'interno del tag di apertura, nelle parentesi angolare dopo il nome del tag, per fornire al browser informazioni aggiungtive sull'elemento.
+        
+        Il tag A ha bisogno dell'attributo href (Hyperlink reference) il cui valore indica la pagina o il sito a cui il link deve puntare
+
+        é bene usare anche attributo title che riporta un messaggio per l'utente che indica dove si andrà a finire cliccando sul link.
+
+        Se il link punta a un sito esterno conviene sempre usare l'attributo target con il valore _blank in modo da far apparire il sito esterno in una nuova tab del browser. Così non perdiamo l'utente che naviga sul sito
+    -->
+    <a href="https://www.google.it" title="Link al sito di google" target="_blank"> Vai su Google</a>
+    <br>
+    <a href="02-form.html" title="vai alla prossima lezione">Vai alla lezione 02</a>
+    <br>
+    <a href="#top" title="Vai alla home">Torna alla homepage</a>
+    <!-- # indica un id -->
+    <hr>
+<!-- IL tag Img è un tag autoconclusivo che permette di visualizzare un immagine all'interno della pagina web.
+ Per dire al browser che immagine deve essere renderizzata, dobbiamo usare un attributo src che assegnamo come valore il percorso dell'immagine da usare. Il browser saprà che deve renderizzare un'immagine che si trova esattamente dove gli abbiamo specificato nel src.
+ Attributo alt alternative text fornisce una descrizione testuale dell'immagine e serve in caso l'immagine non possa essere renderizzata, e ancora più importante a essere riconoscibile da lettori ipovedenti  
+ Usare alt google ti aiuta a salire nei motori di ricerca 
+ Width/height per ridimensionare le immagini, usando solo un attributo si adatta la dimensione
+ 
+ ../ per andare nella/e cartella/e precedente
+ -->
+    <img src="../" alt="" width="">
+
+    <!-- Anche se sconsigliato è possibile usare l'attributo style per dare uno stile a un elemento. all'nterno di questo attributo si può scrivere in CSS tutte le regole di stile che vogliamo -->
+    <p style="color: #515151">
+        Stile diverso in hmtl
+    </p>
+
+</body>
+
+</html>
