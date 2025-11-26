@@ -1,0 +1,27 @@
+/* Reset generale drastico */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+* {
+    box-sizing: border-box;
+    /* content box conta tutti i margin padding che diamo ma non diminuisce il contentuto
+    border box diminuisce il contenuto e diventa più
+    facile calcolare
+    */
+}
+.box-container {
+    font-size: 0;
+}
+
+.box {
+    display: inline-block;
+    width: 25%;
+    height: 150px;
+    padding: 10px;
+    /* margin: 10px; */
+    border: 1px solid #323232;
+    background-color: tomato;
+}
