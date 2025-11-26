@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 - Form</title>
+</head>
+<body>
+    <!-- I form (o web form) vengono utilizzati per ottenere informazioni dall'utente, che sia per permettergli di fare il login o la registrazione al sito, o per contattare i proprietari del sito mandandogli un messagio, o  ancora form di ricerca dove possiamo chiedere all'utente i parametri della sua ricerca.
+    Per questo di solito un form è composto  da una serie di campi di input nei quali l'utente può immettere informazioni. in base al tipo di informazione richiesta, servirà un tipo di input specifico che stabiliremo con l'attributo type. -->
+    <!--  L'attributo action nel tag form serve  a dire  al browser cosa fare una volta che l'utente invia le informazioni -->
+    <form>
+        <!-- i tag input sono autoconclusivi e hanno sempre l'attributo type per indicare il genere di dato che ci aspettiamo dall'utente. Per esempio text, che è il piu generico, si aspetta una stringa di testo di qualisiasi tipo
+        usare i label per etichettare i campi di input, così che il browser e sopratutto l'utente sappiano che tipo di dato ci aspettiamo.
+        Per collegare tra loro label e input assegniamo un attributo id o input e il valore di questo attributo sarà uguale al valore dell'attributo for della label
+        L'attributo name serve nel momento in cui il form viene inviato e chi lo riceve prende i dati e li processa in base a ciò che serve servendosi dell'attributo name.
+        In HTML il name di un input serve anche a raggruppare assieme parti di un form. Un esempio  possono essere checkbox e radio button.
+        Esistono campi di input che non richiedono all'utente di scrivere qualcosa, ma di selezionare una più opzioni, come checkbox, radio button e le select
+        Select è un campo di input che permette aòò'itemte di cliccare su di essa per avere un menù a tendina dal quale scegliere il valore da inserire per poi inviare col form. Siccome dobbiamo inserire noi le opzioni della select, non useremo un tag input che è autoconclusivo, ma un tag select, che accetta al suo interno dei tag option, i quali ripoteranno le opzioni di valori tra cui scegliere.
+
+        usiamo il tag textarea per dare all'utente la possibilità una grande quantità di testo, esempio nel caso in cui gli chiedessimo una biografia, o di scrivere un messagio al proprietario del sito, o di lasciare una recensione ecc ecc
+
+        alla fine del form metteremo un campo di input submit che farà visualizzare un bottone che permette all'utente di inviare il form appena compilato. Al click, il browser prenderà il valore all'interno dell'attributo action del form e invierà li i dati inseriti dall'utente.
+
+        -->
+        <label for="nome">Nome:</label> <br>
+        <input type="text" id="nome" name="nome" placeholder="Inserisci tuo nome completo" required> <br><br>
+
+        <label for="email">Email:</label> <br>
+        <input type="email" id="email" name="email" placeholder="Inserisci email" required> <br><br>
+
+        <label for="password">password:</label> <br>
+        <input type="password" id="password" name="password" placeholder="Inserisci password" required> <br><br>
+        
+        <span>Seleziona gender:</span> <br>
+        <input type="radio" id="opzione1" name="gender" value="uomo">
+        <label for="opzione1">Uomo</label>
+        <input type="radio" id="opzione2" name="gender" value="donna">
+        <label for="opzione2">Donna</label>
+        <input type="radio" id="opzione3" name="gender"
+        value="=altro">
+        <label for="opzione3">Altro</label> <br><br>
+
+        <label for="provincia">Provincia:</label> <br>
+        <select name="provincia" id="provincia">
+            <option value="">Seleziona la tua provincia</option>
+            <option value="To">Torino</option>
+            <option value="Mi">Milano</option>
+            <option value="Rm">Roma</option>
+        </select>
+        <br><br>
+
+        <input type="checkbox" id="privacy" name="privacy" value="accettato" required>
+        <label for="privacy">Ho letto e accetto i termini e condizioni riportati della privacy policy</label>
+        <br><br>
+
+        <label for="bio">Racconta la tua esperienza:</label> <br>
+        <textarea name="bio" id="bio" cols="60" rows="10" placeholder="Scrivi qui..."></textarea> <br><br>
+
+        <button type="reset">Resetta il form</button>
+       
+        <!--<input type="submit" value="Invia il form e registrati"> -->
+        <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send-icon lucide-send"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
+        Invia il form</button>
+
+    </form>
+</body>
+</html>
