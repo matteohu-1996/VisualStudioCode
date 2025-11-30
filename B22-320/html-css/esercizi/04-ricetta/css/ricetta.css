@@ -1,0 +1,71 @@
+body{
+    color: #708090;
+}
+
+h1, h2, h3 {
+    color: #4e3969;
+}
+
+
+.img-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+}
+
+.piatto {
+    width: 70%;
+}
+
+.info {
+    position: relative;
+    background-color: #f7f6f8;
+    border: 5px solid beige ;
+    width: 500px;
+    align-content: center;
+    margin: 10px;
+    padding: 20px;
+}
+
+li{
+
+    list-style-type: none;
+    padding: 5px;
+}
+
+.ingredienti {
+    position: relative;
+    background-color: #f7f6f8;
+    border: 5px solid beige ;
+    padding: 20px;
+    column-count: 2;
+}
+
+.calorie {
+    position: absolute;
+    top: 0;           
+    right: 0;        
+    border-color: #4e3969;
+    padding: 3px 10px; 
+    margin: -5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    z-index: 10; 
+}
+
+.info .calorie {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+}
+
+.ingredienti ul h5 {
+  margin-top: 0;      
+  margin-bottom: 5px; 
+}
+
+.numeri {
+    color: #e28015;
+}
