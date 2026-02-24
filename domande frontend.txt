@@ -1,0 +1,10 @@
+classe per creare navbar > navbar
+avviso > alert o modales
+stile base > primary, secondary, danger, ecc
+ricordare px dei breakpoint sm 576px ecc
+allineamento > align e justify content
+img-fluid o thumbmnail cambia le dimensioni dell'immagine
+griglia grid > 12 colonne
+estensione saas > bootstraps scss > compilazione > variabili > file css di bootstrap
+scss contiene variabile : variables.css
+margin padding > m o p + top (t), bottom (b), s, e, orizzontale (x), verticale (y) + numero (1-2)
