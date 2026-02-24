@@ -1,5 +1,5 @@
 classe per creare navbar > navbar
-avviso > alert o modales
+avviso > alert o modals
 stile base > primary, secondary, danger, ecc
 ricordare px dei breakpoint sm 576px ecc
 allineamento > align e justify content
@@ -9,3 +9,4 @@ estensione saas > bootstraps scss > compilazione > variabili > file css di boots
 scss contiene variabile : variables.css
 
 margin padding > m o p + top (t), bottom (b), start (s), end (e), orizzontale (x), verticale (y) + numero (1-2)
+
